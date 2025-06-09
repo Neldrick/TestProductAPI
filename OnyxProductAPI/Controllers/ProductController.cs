@@ -1,11 +1,16 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnyxProductAPI.Models;
 using OnyxProductAPI.Services;
+using OnyxProductAPI.Utils.Authen;
 
 namespace OnyxProductAPI.Controllers;
 
 [ApiController]
 [Route("/api/[controller]")]
+[Authorize(AuthenticationSchemes = ApiKeyAuthenticationSchemeOption.DefaultScheme)]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class ProductController : ControllerBase
 {
     private readonly IProductServices _productServices;

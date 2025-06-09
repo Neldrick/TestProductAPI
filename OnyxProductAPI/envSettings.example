@@ -1,0 +1,10 @@
+{
+    "APIKey": "123456",
+    "JWTAuthority":"https://login.microsoftonline.com/6e2b08dd",
+    "JWTAudience": "pi://ee63d703",
+    "MsIdInstance": "https://login.microsoftonline.com/common/",
+    "MsIdAuthority":"https://sts.windows.net/6e2b08dd/",
+    "MsIdTenantId": "6e2b08dd",
+    "MsIdClientId": "ee63d703",
+    "CorsDomain": "http://localhost:4200"
+}
