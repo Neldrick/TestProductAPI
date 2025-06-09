@@ -1,3 +1,6 @@
+using OnyxProductAPI.Repositories;
+using OnyxProductAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers(); // Add controllers
 builder.Services.AddEndpointsApiExplorer(); // Enable API explorer for Swagger
 builder.Services.AddSwaggerGen(); // Add Swagger generation
+
+builder.Services.AddSingleton<IProductRepository, ProductRepository>(); // Register ProductRepository
+builder.Services.AddScoped<IProductServices, ProductServices>(); // Register ProductServices
 
 var app = builder.Build();
 
