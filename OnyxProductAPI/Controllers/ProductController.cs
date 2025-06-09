@@ -36,8 +36,7 @@ public class ProductController : ControllerBase
         }
 
         var createdProduct = await _productServices.CreateProductAsync(product);
-        var result = CreatedAtAction(nameof(GetAllProductsAsync), new { id = createdProduct.Id }, createdProduct);
-        return Ok(result);
+        return Ok(createdProduct);
     }
 
     [HttpGet("{color}")]
